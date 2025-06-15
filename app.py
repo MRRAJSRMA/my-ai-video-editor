@@ -1,3 +1,7 @@
+from body_effects import apply_body_segmentation
+
+# After auto cut
+apply_body_segmentation("cut_output.mp4", "final_output.mp4", background_path="assets/bg.jpg")
 from auto_cut import auto_cut_video
 
 # After video processing (before caption/text overlay)
