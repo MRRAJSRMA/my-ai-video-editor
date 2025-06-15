@@ -1,3 +1,4 @@
+from effects import apply_shake, apply_zoom, apply_glitch
 import gradio as gr
 import cv2
 import tempfile
