@@ -1,9 +1,5 @@
 gradio
-rembg
-librosa
-soundfile
-moviepy
 opencv-python
-numpy
-openai-whisper
 rembg
+onnxruntime
+moviepy
