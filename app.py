@@ -1,3 +1,9 @@
+from auto_cut import auto_cut_video
+
+# After video processing (before caption/text overlay)
+auto_cut_video("output.mp4", "cut_output.mp4")
+
+# Then use "cut_output.mp4" in rest of the pipeline
 from visual_effects import apply_hdr_filter, create_text_clip
 from captions import extract_captions, overlay_caption
 from effects import apply_shake, apply_zoom, apply_glitch
