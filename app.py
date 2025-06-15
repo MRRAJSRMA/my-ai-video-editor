@@ -1,3 +1,4 @@
+from visual_effects import apply_hdr_filter, create_text_clip
 from captions import extract_captions, overlay_caption
 from effects import apply_shake, apply_zoom, apply_glitch
 import gradio as gr
