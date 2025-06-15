@@ -1,3 +1,4 @@
+rembg
 librosa
 soundfile
 moviepy
