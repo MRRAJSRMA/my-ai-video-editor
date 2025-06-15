@@ -75,3 +75,33 @@ gr.Interface(
     title="AI Video Editor - Phase 1",
     description="Smart body detection, zoom effect, and background removal using AI.",
 ).launch()
+def full_ai_video_pipeline(video_path, background, caption, zoom, body_effect):
+    input_path = "input_video.mp4"
+    output_path = "final_output.mp4"
+
+    with open(input_path, "wb") as f:
+        f.write(video_path.read())
+
+    if caption:
+        transcribe_and_generate_subtitles(input_path, "subtitled.mp4")
+        input_path = "subtitled.mp4"
+
+    if zoom:
+        apply_zoom_shake(input_path, "zoomed.mp4")
+        input_path = "zoomed.mp4"
+
+    auto_cut_video(input_path, "cut.mp4")
+    input_path = "cut.mp4"
+
+    if body_effect:
+        bg_map = {
+            "Beach": "assets/beach.jpg",
+            "City": "assets/city.jpg",
+            "Blurred": "assets/blur.jpg",
+            "None": None
+        }
+        apply_body_segmentation(input_path, output_path, background_path=bg_map.get(background))
+    else:
+        output_path = input_path
+
+    return output_path
